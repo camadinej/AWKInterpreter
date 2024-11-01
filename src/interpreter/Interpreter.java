@@ -19,9 +19,9 @@ import java.util.regex.Pattern;
  */
 public class Interpreter {
     /**
-     * This class is models the input file control loop in an AWK program
+     * This class models the input file control loop in an AWK program
      */
-     public class LineManager {
+     private class LineManager {
         private List<String> inputText;
 
         public LineManager(List<String> inputText) {
@@ -248,18 +248,6 @@ public class Interpreter {
         }
     }
 
-    public LineManager getLineManager() {
-        return lineManager;
-    }
-
-    public HashMap<String, InterpreterDataType> getGlobalVariables() {
-        return globalVariables;
-    }
-
-    public HashMap<String, FunctionDefinitionNode> getFunctions() {
-        return functions;
-    }
-
     /**
      * walks through the program node and executes the program
      */
@@ -375,7 +363,7 @@ public class Interpreter {
      * @param localVariables : the possible local variables of a function
      * @return a new InterpreterDataType with the result of the operation
      */
-    public InterpreterDataType getIDT(Node node, HashMap<String, InterpreterDataType> localVariables) {
+    private InterpreterDataType getIDT(Node node, HashMap<String, InterpreterDataType> localVariables) {
         InterpreterDataType left;
         InterpreterDataType right;
 
